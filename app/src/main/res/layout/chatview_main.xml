@@ -206,17 +206,17 @@
         android:id="@+id/chat_lines"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:paddingBottom="2dp"
         android:layout_above="@+id/bottom_bar"
         android:layout_alignParentTop="true"
-
         android:clickable="false"
+
         android:divider="#00000000"
         android:dividerHeight="0px"
-        android:listSelector="#00000000"
-        android:transcriptMode="normal"
         android:fadingEdge="none"
-        android:scrollbars="vertical" />
+        android:listSelector="#00000000"
+        android:paddingBottom="2dp"
+        android:scrollbars="vertical"
+        android:transcriptMode="normal" />
 
     <!-- tools:targetApi suppresses warning for the shadow color options.
      these only make the shadow less pronounced and are of little importance -->

@@ -57,7 +57,7 @@ public class Color {
 
     // prepares: cleanMessage, margin, finalSpanList
     public Color(CharSequence timestamp, String prefix, String message, final boolean enclose_nick, final boolean highlight, final int max, final int alignment) {
-        if (DEBUG) logger.debug("parse(timestamp='{}', prefix='{}', message='{}', enclose_nick={}, highlight={}, max={}, align_right={})",
+        if (true) logger.debug("parse(timestamp='{}', prefix='{}', message='{}', enclose_nick={}, highlight={}, max={}, align_right={})",
                 timestamp, prefix, message, enclose_nick, highlight, max, alignment);
         int puff;
         ColorScheme cs = ColorScheme.get();
@@ -123,6 +123,10 @@ public class Color {
             maybeMakeAndAddSpans(sb.length() - 2, sb.length() - 1, cs.chat_nick_suffix, finalSpanList);
         }
         else sb.append(" ");
+        sb.append("\n");
+        if (alignment == ALIGN_TIMESTAMP){
+            for (int x = 0; x < margin; x++) sb.append(" ");
+        }
 
         // here's our margin
         if (alignment != ALIGN_TIMESTAMP) {
@@ -138,6 +142,7 @@ public class Color {
             finalSpanList.add(span);
         }
         sb.append(message);
+        sb.append("\n");
         messageString = message;
         lineString = sb.toString();
     }
